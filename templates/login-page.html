@@ -1,0 +1,84 @@
+<!-- Inherit from default layout page -->
+{% extends "layout.html" %}
+
+<!-- Override title -->
+
+{% if title %}
+<title>HIITWA - {{ title }}</title>
+{% else %}
+<title>HIIT Workout App</title>
+{% endif %}
+
+<!-- Override content -->
+{% block content%}
+<!-- Content -->
+
+<div class="row no-gutters login-layout">
+    <div class="col login-bgr no-gutters"><img src="static/images/log-img.png" class="img-fluid leftside"
+            alt="Responsive image">
+    </div>
+    <div class="col login-intro no-gutters">
+        <div class="content-section rightside">
+            <h1 class="loginform">Sign In</h1>
+
+            <!--Display success or error messages-->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <div class="logmsg form-group alert alert-{{ category }}">
+                {{ message }}
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+
+            <!-- Form to login -->
+            <form class="card-text loginform" action="" method="POST" novalidate>
+                <!-- protects from CSRF attacks-->
+                {{ form.hidden_tag() }}
+
+                <div class="form-group-reg logingrp">
+
+                    {% if form.email.errors %}
+                    {{ form.email(placeholder='Email Address', class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.email.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.email(placeholder='Email Address', class="form-control form-control-lg") }}
+                    {% endif %}
+
+                </div>
+                <div class="form-group-reg logingrp">
+
+                    {% if form.password.errors %}
+                    {{ form.password(placeholder='Password', class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback login-invalid-pw">
+                        {% for error in form.password.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.password(placeholder='Password', class="form-control form-control-lg pwd-form") }}
+                    {% endif %}
+                </div>
+                <!-- <div class="form-check">
+                    {{ form.remember(class="form-check-input") }}
+                    {{ form.remember.label(class="form-check-input") }}
+                </div> -->
+
+                <div class="form-group">
+                    {{ form.submit(class="btn btn-grdnt-login  login-btn", value="CONTINUE") }}
+
+                </div>
+                <div class="form-check">
+                    <a href="{{ url_for('auth.register') }}" class="btn btn-grdnt-login  login-btn" role="button">SIGN
+                        UP</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

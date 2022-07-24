@@ -1,0 +1,92 @@
+<!-- Inherit from default layout page -->
+{% extends "layout.html" %}
+
+<!-- Override title -->
+
+{% if title %}
+<title>HIITWA - {{ title }}</title>
+{% else %}
+<title>HIIT Workout App</title>
+{% endif %}
+
+<!-- Override content -->
+{% block content%}
+<!-- Card -->
+
+<div class="card reg-card text-center w-75 container">
+
+    <div class="card-body row align-self-center">
+        <div class="reg-section">
+            <h1 class="card-title">Sign Up</h1>
+
+            <!-- Form to register -->
+            <form class="card-text" action="" method="POST" novalidate>
+                <!-- protects from CSRF attacks-->
+                {{ form.hidden_tag() }}
+                <div class="form-group-reg">
+                    {% if form.username.errors %}
+                    {{ form.username(placeholder='Name', class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.username.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.username(placeholder='Name', class="form-control form-control-lg") }}
+                    {% endif %}
+
+                </div>
+                <div class="form-group-reg">
+
+                    {% if form.email.errors %}
+                    {{ form.email(placeholder='Email Address', class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.email.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.email(placeholder='Email Address', class="form-control form-control-lg") }}
+                    {% endif %}
+
+                </div>
+                <div class="form-group-reg">
+
+                    {% if form.password.errors %}
+                    {{ form.password(placeholder='Password', class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.password.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.password(placeholder='Password', class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group-reg pwd-form">
+
+                    {% if form.confirm_password.errors %}
+                    {{ form.confirm_password(placeholder='Confirm Password', class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.confirm_password.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.confirm_password(placeholder='Confirm Password', class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-check">
+                    {{ form.submit(class="btn btn-grdnt-login  login-btn", value="CONTINUE") }}
+
+                </div>
+            </form>
+            <div class="border-top pt-3">
+                <small class="text-muted">
+                    Already Have An Account? <a class="ml-2" href="{{ url_for('auth.login') }}">Sign In</a>
+                </small>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

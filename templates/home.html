@@ -1,0 +1,32 @@
+<!-- Inherit from default layout page -->
+{% extends "layout.html" %}
+
+<!-- Override title -->
+<!-- {% block title%}
+Home Page
+{% endblock %} -->
+{% if title %}
+<title>HIITWA - {{ title }}</title>
+{% else %}
+<title>HIIT Workout App</title>
+{% endif %}
+
+<!-- Override content -->
+{% block content%}
+<!-- Header -->
+<head>
+  {% include 'nav_bar.html' %}
+</head>
+
+<body class="home-bg">
+<main role="main" class="container ">
+    <div class="container-fluid main-bgr">
+        <div class="content-section home-intro">
+            <h3>HIIT Workout Application</h3>
+            <a href="{{ url_for('workout.workout_builder') }}" class="btn btn-grdnt-login" role="button">Build Your Own Workout</a>
+        </div>
+    </div>
+</main>
+</body>
+
+{% endblock %}

@@ -1,0 +1,291 @@
+* {
+    font-family: 'Trebuchet MS', sans-serif;
+  }
+
+
+
+body {
+    background-image: linear-gradient(to right, black, red);
+}
+
+.home-bg {
+    background-image: url("../images/log-img.png") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-nav-home {
+    background-color: #A90F0F;
+}
+
+h2 {
+    text-align: center;
+    font-weight: lighter;
+    font-size: 1.5rem;
+}
+
+h3 {
+    color: #ffffffff;
+}
+
+h4{
+    font-size: 1rem;
+}
+
+h5{
+    font-size: .85rem;
+}
+
+.log-btn {
+    border-radius: 25px;
+    width: 120px;
+    font-weight: bold;
+}
+
+.container_height {
+    min-height: 700px;
+}
+
+.btn-grdnt {
+    background-image: linear-gradient(to right, black, red);
+    color: #ffffff;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.home-intro {
+    text-align: left;
+    position: fixed;
+    top: 40%;
+}
+
+.home-intro h3 {
+    margin-bottom: 20px;
+    font-size: 3rem;
+}
+
+footer {
+    background-color: red;
+    text-align: center;
+    padding: 1px;
+}
+
+/*Login Page*/
+.leftside,
+.rightside {
+    width: 100%;
+}
+.login-bgr img {
+    height: 100%;
+}
+
+.content-section {
+    margin: 0;
+}
+
+.login-layout {
+    height: 100vh;
+}
+
+.login-intro {
+    background-color: #ffffff;
+    color: black;
+
+}
+
+.logmsg {
+    margin-left: 5rem;
+}
+
+.loginform {
+    padding: 4rem;
+}
+
+.logingrp {
+    width: 75%;
+}
+
+.login-invalid-pw {
+    margin-bottom: 2rem;
+}
+
+.btn-grdnt-login {
+    background-image: linear-gradient(to right, black, red);
+    background-repeat: no-repeat !important;
+    background-color: transparent;
+    color: #ffffff !important;
+    width: 20rem;
+    border-radius: 25px;
+}
+
+.btn-grdnt-login:hover {
+    color: white;
+    font-weight: bold;
+    background-image: linear-gradient(to right, red, white);
+}
+
+.form-group {
+    width: 70%;
+}
+
+.form-check {
+    padding-bottom: 1rem;
+    padding-left: 0;
+}
+
+.pwd-form {
+    margin-bottom: 5rem;
+}
+
+/*Register Page*/
+
+.reg-section h1 {
+    margin-bottom: 2.75rem;
+}
+
+.reg-card {
+    margin-top: 4rem;
+    padding: 4rem;
+}
+
+.form-group-reg {
+    width: 100%;
+    padding: 10px;
+}
+
+.bottom_padding {
+    padding-bottom: 50px;
+}
+
+.half_bottom_padding {
+    padding-bottom: 15px;
+}
+
+.workout-builder-padding {
+    padding: 2rem;
+    text-align: center;
+
+}
+
+/*Workout Pages*/
+
+.toggle-btn {
+    border-radius: 25px !important;
+    font-weight: bold !important;
+    background-color: rgb(240, 240, 240) !important;
+}
+
+.toggle-btn.active, .toggle-btn:active {
+    background-color: grey !important;
+}
+
+.toggle-btn-width {
+    width: 120px !important;
+}
+
+input {
+    display: none;
+}
+
+.video-descr-cont {
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+}
+
+.image-container {
+    height: 100%;
+    width: 100%;
+    background-color: white;  
+    border-radius: 25px !important;  
+}
+
+.container {
+    margin-bottom: 1em;
+}
+
+.image-toggle {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.button-icon {
+    vertical-align: middle;
+    float: right;
+    font-size: 1.5em !important;
+}
+
+.add-button {
+    border-radius: 25px !important; 
+    max-width: 100%;
+    height: 100% !important;
+    font-weight: bold !important;
+    background-color: rgb(240, 240, 240) !important;
+    text-align: start;
+    vertical-align: middle;
+}
+  
+.center {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    text-align: center;
+}
+  
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+}
+  
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 15px;
+}
+  
+.align-bottom {
+    text-align:center;
+    padding: 15px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.center-nav-bar {
+    margin: auto;
+}
+
+.align-text-center {
+    text-align:center;
+}
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .padding_top{
+    padding-top: 5%;
+  }
+
+  .confetti{
+    min-width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    touch-action: none;
+    position: fixed;
+    top: 7%;
+    left: 0;
+    user-select: none;
+ }
+

@@ -1,0 +1,70 @@
+<!-- Inherit from default layout page -->
+{% extends "layout.html" %}
+
+<!-- Override title -->
+<!-- {% block title%}
+Home Page
+{% endblock %} -->
+{% if title %}
+    <title>HIITWA - {{ title }}</title>
+{% else %}
+    <title>HIIT Workout App</title>
+{% endif %}
+<!-- Override content -->
+{% block content%}
+    <!-- Header -->
+    <head>
+        <script language=javascript type=text/javascript src="static/js/workout-completed.js" async></script>
+        <script language=javascript type=text/javascript src="static/js/confetti.js" defer></script>
+        {% include 'nav_bar.html' %}
+        {% include 'error-modal.html' %}
+        {% include 'confirmation_modal.html' %}
+    </head>
+
+    <body class="grdnt_bg">
+        <canvas class="confetti" id="canvas"></canvas>         
+        <div class="container half_bottom_padding"></div>
+        <div class="container align-items-stretch">
+            <div class="row">
+                <div class="col-md-12" style="min-height: 700px;">
+                        <div class="container justify-content-center image-container">
+                            <div class="container half_bottom_padding"></div>
+                            <div class="container align-text-center"><h1>Congratulations!</h1>
+                            </div>
+                            <hr>
+                            <div class="container align-text-center" style="height:20%; padding-top:2.5%; color: transparent;">
+                                <img src="static/images/party-emoji.png" width="15%" alt="">
+                            </div>
+                            <div class="container align-text-center" style="height:20%;"><div class="vertical-center"><h2>You Completed a Workout!</h2></div></div>
+                            <div class="container align-text-center" style="height:20%;">
+                                <h2>Rate Your Workout's Difficulty:</h2>
+                                <div class="container padding_top">
+                                <div class="container d-flex justify-content-center">
+                                    <div id="finished-difficulty" class="btn-group btn-group-toggle" data-toggle="buttons">
+                                        <label class="btn toggle-btn toggle-btn-width">
+                                        <input type="radio" name="user-difficulty" id="1" autocomplete="off">Too Easy
+                                        </label>
+                                        <label class="btn toggle-btn toggle-btn-width">
+                                        <input type="radio" name="user-difficulty" id="2" autocomplete="off">Just Right
+                                        </label>
+                                        <label class="btn toggle-btn toggle-btn-width">
+                                        <input type="radio" name="user-difficulty" id="3" autocomplete="off">Too Hard
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                                
+                            </div>
+                        </div>
+                        <div class="container align-bottom">
+                            <a class="btn btn-grdnt-login" role="button" onclick="rate()">COMPLETE WORKOUT</a>
+                        </div>
+                </div>   
+            </div>
+        </div>
+        
+    </body>
+
+
+
+{% endblock %}

@@ -1,0 +1,10 @@
+flask~=2.1.1
+click~=8.1.2
+passlib~=1.7.4
+flask_sqlalchemy
+flask_wtf
+wtforms~=3.0.1
+email_validator
+flask_login
+flask_bcrypt
+SQLAlchemy~=1.4.35

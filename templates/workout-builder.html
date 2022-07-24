@@ -1,0 +1,122 @@
+<!-- Inherit from default layout page -->
+{% extends "layout.html" %}
+
+<!-- Override title -->
+<!-- {% block title%}
+Home Page
+{% endblock %} -->
+{% if title %}
+<title>HIITWA - {{ title }}</title>
+{% else %}
+<title>HIIT Workout App</title>
+{% endif %}
+
+<!-- Override content -->
+{% block content%}
+<!-- Header -->
+<head>
+    <script language=javascript type=text/javascript src="static/js/workout-builder.js" async></script>
+    {% include 'nav_bar.html' %}
+    {% include 'error-modal.html' %}
+    {% include 'confirmation_modal.html' %}
+</head>
+
+<body class="grdnt_bg">
+    <div class="container half_bottom_padding"></div>
+    <div class="container d-flex align-items-stretch">
+        <div class="row">
+            <div class="col-md-6">
+               <div class="col-md-12 image-container workout-builder-padding">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <div class="container justify-content-center">
+                        <div class="row">
+                          <div class="col-sm">
+                                <label class="btn toggle-btn image-toggler toggle-btn-width">  
+                                    <input type="radio" name="options" id="option1" data-image-id="#chest" autocomplete="off" onchange="checkValue('chest')"> Chest
+                                </label>
+                          </div>
+                          <div class="col-sm">
+                                <label class="btn toggle-btn image-toggler toggle-btn-width">
+                                    <input type="radio" name="options" id="option2" data-image-id="#back" autocomplete="off" onchange="checkValue('back')"> Back
+                                </label>
+                          </div>
+                          <div class="col-sm">
+                                <label class="btn toggle-btn image-toggler toggle-btn-width">
+                                    <input type="radio" name="options" id="option3" autocomplete="off" onchange="checkValue('arms')"> Arms
+                                </label>
+                          </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm">
+                                <label class="btn toggle-btn image-toggler toggle-btn-width">
+                                    <input type="radio" name="options" id="option4" autocomplete="off" onchange="checkValue('abs')"> Abs
+                                </label>
+                            </div>
+                            <div class="col-sm">
+                                <label class="btn toggle-btn image-toggler toggle-btn-width">
+                                    <input type="radio" name="options" id="option5" autocomplete="off" onchange="checkValue('legs')"> Legs
+                                </label>
+                            </div>
+                            <div class="col-sm">
+                                <label class="btn toggle-btn image-toggler toggle-btn-width">
+                                    <input type="radio" name="options" id="option6" autocomplete="off" onchange="checkValue('shoulders')"> Shoulders
+                                </label>
+                            </div>
+                          </div>
+                      </div>
+                    
+                  </div>
+                  <div>
+                    <img id="human-fig" src='static/images/default-human-fig.png' class='image-toggle'>
+                </div>
+               </div>
+            </div>
+            <div class="col-md-6">
+               <div class="col-md-12 image-container workout-builder-padding">
+                <div class="container">
+                    <h2>Selected Muscle Group</h2>
+                    <hr>
+                    <div id="selected-muscle" style="text-align: center;">
+                        <h4 class="selected-muscle">None</h4>
+                    </div>
+                </div>
+                <div class="container selected-muscles-list" style="padding-bottom: 221px;">
+                    <h2>Current Selected Muscles</h2>
+                    <hr>
+                    <div class="selected-muscles">
+                        
+                    </div>
+                </div>
+
+                <div class="container bottom_padding">
+                    <h2>Skill Level</h2>
+                    <hr>
+                    <div class="container d-flex justify-content-center image-container">
+                        <div id="difficulty" class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <label class="btn toggle-btn toggle-btn-width">
+                            <input type="radio" name="skill" id="option1" autocomplete="off" onchange="changeSkill('Beginner')">Beginner
+                            </label>
+                            <label class="btn toggle-btn toggle-btn-width">
+                            <input type="radio" name="skill" id="option2" autocomplete="off" onchange="changeSkill('Intermediate')">Intermediate
+                            </label>
+                            <label class="btn toggle-btn toggle-btn-width">
+                            <input type="radio" name="skill" id="option3" autocomplete="off" onchange="changeSkill('Advanced')">Advanced
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="container d-flex justify-content-between align-items-center">
+                    <div>Total Exercises Added:<span id="total-muscles">0</span></div>
+                    <!-- Trigger the modal with a button -->
+                    <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" onclick="continueButtonClicked();">Open Modal</button>  -->              
+                    <a class="btn btn-grdnt-login" role="button" onclick="continueButtonClicked()">START WORKOUT</a>
+                </div>
+               </div>
+            </div>
+          </div>
+    </div>
+</body>
+
+
+
+{% endblock %}
